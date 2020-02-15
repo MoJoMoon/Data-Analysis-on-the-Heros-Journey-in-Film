@@ -1,4 +1,6 @@
-# Module 1 Final Project
+# Exploring Trends among Top Grossing Films
+
+![title](img/grossing_franchises.PNG)
 
 ## Introduction
 
