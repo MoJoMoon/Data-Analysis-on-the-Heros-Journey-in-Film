@@ -1,6 +1,6 @@
 # Exploring Trends among Top Grossing Films
 
-![title](img/franchises.PNG)
+![title](img/avatar.gif)
 
 ## Introduction
 
@@ -27,15 +27,12 @@ The goals of this project are to answer three questions:
 This project will take an in-depth look into data describing the film industry and its current trends. The process to make this exploration will be:
 
 Import libraries & modules:
-
    - Gain access to code from other libraries and modules
    
 Gather data & Read in dataframes:
-
    - Get access to the dataframes to be used
 
 Clean Data:
-
   - Check for null values
   - Impute or drop null values
   - Check for duplicate values
@@ -43,28 +40,24 @@ Clean Data:
   - Join dataframes where necessary
   
 EDA for Question 1
-
    - Conduct feature engineering where necessary
    - Make visualizations
    - Assess for valuable correlations
    - Summarize findings
    
 EDA for Question 2
-
   - Conduct feature engineering where necessary
   - Make visualizations
   - Assess for valuable correlations
   - Summarize findings
   
 EDA for Question 3
-
   - Conduct feature engineering where necessary
   - Make visualizations
   - Assess for valuable correlations
   - Summarize findings
   
 Conclusion & Recommendations
-
   - Conclude findings
   - Offer recommendations
 
@@ -147,7 +140,7 @@ For Q1 I searched for patterns that might exist among the top grossing films. I 
 
 ## Q1 Insights, Recommendations, & Future Work
 
-##### Insights
+### Insights
 
 Upon inspection, and exploratory data analysis there would appear to be trends among the top 100 worldwide grossing films. The data shows that:
 
@@ -155,12 +148,12 @@ Upon inspection, and exploratory data analysis there would appear to be trends a
   - A reasonable budget for production for a film expected to be in the top 100 grossing is between **170-221 million dollars**, with Action films costing **50 million dollars** more to make on average. The average worlwide gross of the top 100 films was roughly **750 million** dollars. 
   - A favorable runtime for a film belonging to the top 100 grossing worldwide is around **120 minutes**, with Action movies having an average **30 minute** longer length. There does **not appear to be a correlation between a film's gross and runtime**.
 
-##### Recommendaion
+### Recommendaion
 
 * **Make an Action/Adventure film**
 Create an Adventure or Action film with a **production budget between 171 and 221 million dollars**, if making specifically an **Action film increase budget by around 30 million dollars**. The film should have a **runtime of around 127 minutes**, in other words 2 hours. The **average worldwide gross of Action films is around 750 million dollars**.
 
-##### Future Work
+### Future Work
 
 * Explore demographics on movie goers
 * Utilize ratings data to find correlations among perceived quality of films
@@ -179,7 +172,7 @@ When taking a look at the list of top 100 grossing films, there seems to be a pa
 
 ### Franchise Age Visualization
 
-![title](img/eda2_2.png)
+![title](img/eda_2_2.png)
 
 
 ### Franchise Movie Count Visualization
@@ -189,14 +182,14 @@ When taking a look at the list of top 100 grossing films, there seems to be a pa
 
 ## Q2 Insights, Recommendations, & Future Work
 
-##### Insights
+### Insights
 
 Upon exploring the relationship between Franchise films and the top 100 grossing films, it is clear that there is a strong correlation. The **average gross of a franchise film was found to be around 200 million dollars**, while the **average gross of a franchise's best performing film was around 450 million dollars**. The **average gross of an entire franchise was 1.08 billion dollars**. 
 
 Creating a franchise would allow Microsoft studios to create a collection of films, **releasing a film on average every 2-3 years**. Data has also shown that the Action and Adventure genre is popular among the most common franchise films.
 
 
-##### Recommendation
+### Recommendation
 
 * **Make a Film Franchise**
 Use this Action/Adventure film to begin a franchise. This would enable to studio to make on average **one film every 2-3 years for 10 years**. An average franchise film **grosses 200 million dollars domestically**, while the gross of a franchise's **number one film is around 450 million dollars**. A franchise would on **average earn 1.08 billion dollars** for the company. 
@@ -204,7 +197,7 @@ Use this Action/Adventure film to begin a franchise. This would enable to studio
 Suggested franchises to make are based on **franchises Microsoft already owns** which can **easily fit the Action/Adventure film** genre such as the **Minecraft, Halo, and Forza franchises**. If Microsoft were successful in transferring the fanbases of these gaming franchises into the movie industry, the three franchises combined could add around **3.3 billion dollars worth of revenue into the company**.
 For this project, your Jupyter Notebook should meet the following specifications:
 
-##### Future Work
+### Future Work
 
 * Gather and analyze data on films that are analagous with Microsoft game franchises
 * Use machine learning models such as sentiment analysis to find valuable insights from these films' scripts.
@@ -248,18 +241,18 @@ When analyzing a franchise, the most important aspect is the fact that the story
 
 ## Q3 Insights, Recommendations, & Future Work
 
-##### Insights
+### Insights
 
 The data showed that there is a **strong correlation between franchise film storylines and the Hero's Journey** as it has been defined. I can see that a high percentage of franchise films utilize the Monomyth in order to create a plot with depth and epic that allows for several installments to tell the story, and in many cases a space for continuation that allows the story to grow over the years. 
 
 I can see that the worldwide gross of this group is quite high, being about **845 million dollars**. The **average runtime of a Hero's Journey film is 104 minutes**, and the average production budget is **197 million dollars**. This may be one of the most profitable categories of film that we have explored. The monomyth also aligns with the most popular top grossing film genres Adventure and Action.
 
-##### Recommendations 
+### Recommendations 
 
 * **Use The Hero's Journey Format**
 The film franchise should follow the Hero's Journey format. This is a proven format among franchise films that allow the space and growth necessary to sustain a large collection of films. These films on **average gross 845 million dollars worldwide**, with an average production budget of **197 million dollars**. This format also lends itself to the Action and Adventure genre very well.
 
-##### Future Works
+### Future Works
 
 * Gather more data on Monomyth films
 * Reseach other trends found within the storylines of successful franchise films
