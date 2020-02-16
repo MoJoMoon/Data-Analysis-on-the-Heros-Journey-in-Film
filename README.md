@@ -109,9 +109,9 @@ For Q1 I searched for patterns that might exist among the top grossing films. I 
 
 ## EDA for Q1
 
-### Genre VIsualization
+### Genre Visualization
 
-![title](img/eda1.png)
+![title](img/eda1_11.png)
 
 
 ### Production Value Visualization
