@@ -1,162 +1,265 @@
 # Exploring Trends among Top Grossing Films
 
-![title](img/grossing_franchises.PNG)
+![title](img/franchises.PNG)
 
 ## Introduction
 
-In this lesson, we'll review all of the guidelines and specifications for the final project for Module 1.
+Microsoft is interested in creating a new movie studio, and has hired me to *help the company better understand the movie industry*. The key question Microsoft wants answered through data analysis is: 
+What **type** of **films** are currently doing the **best** at the **box office**?
+Upon answering this question, they would like me to translate these findings into **actionable insights** for the studio to use when deciding what films they should make.
 
 ## Objectives
 
-You will be able to:
+The goals of this project are to answer three questions:
 
-* Describe all required aspects of the final project for Module 1
-* Describe all required deliverables
-* Describe what constitutes a successful project
-* Describe what the experience of the project review should be like
+ - Q1: What trends exist among the 100 highest grossing films?
+     * Find and express general trends among the highest grossing contemporary films.
+ 
+ - Q2: Is there a correlation between Franchise Films and 100 highest grossing films?
+     * Delve deeper into trends related to franchise films to find correlations among the top grossing films.
+     
+ - Q3: What is a key correlation among Franchise Plots?
+     * Pinpoint an important pattern among successful franchise film storylines.
+ 
 
-## Final Project Summary
+## Methodology
 
-You've made it all the way through the first module of this course - take a minute to celebrate your awesomeness!
+This project will take an in-depth look into data describing the film industry and its current trends. The process to make this exploration will be:
 
-![awesome](https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-1-project-v2-1/master/awesome.gif)
+Import libraries & modules:
 
-All that remains in Module 1 is to put our newfound data science skills to use with a final project! You should expect this project to take between 20 and 25 hours of solid, focused effort. If you're done way quicker, go back and dig in deeper or try some of the optional "level up" suggestions. If you're worried that you're going to get to 30 hrs and still not even have the data imported, reach out to an instructor in Slack ASAP to get some help!
+   - Gain access to code from other libraries and modules
+   
+Gather data & Read in dataframes:
 
-## The Project
+   - Get access to the dataframes to be used
 
-Microsoft sees all the big companies creating original video content, and they want to get in on the fun. They have decided to create a new movie studio, but the problem is they don’t know anything about creating movies. They have hired you to help them better understand the movie industry.
-Your team is charged with doing data analysis and creating a presentation that explores what type of films are currently doing the best at the box office. You must then translate those findings into actionable insights that the CEO can use when deciding what type of films they should be creating.
+Clean Data:
 
-# The Dataset
+  - Check for null values
+  - Impute or drop null values
+  - Check for duplicate values
+  - Drop duplicates
+  - Join dataframes where necessary
+  
+EDA for Question 1
 
-You may scrape or make API calls to get additional data, but included in the repository (in the folder `zippedData`) is some movie-related data from:
+   - Conduct feature engineering where necessary
+   - Make visualizations
+   - Assess for valuable correlations
+   - Summarize findings
+   
+EDA for Question 2
+
+  - Conduct feature engineering where necessary
+  - Make visualizations
+  - Assess for valuable correlations
+  - Summarize findings
+  
+EDA for Question 3
+
+  - Conduct feature engineering where necessary
+  - Make visualizations
+  - Assess for valuable correlations
+  - Summarize findings
+  
+Conclusion & Recommendations
+
+  - Conclude findings
+  - Offer recommendations
+
+
+## Import Libraries & Modules
+
+The beginning of the project involves importing the libraries used throughout the project that do all the heavy lifting, these include:
+
+- `Pandas`: a data analysis library we will use for its data structures and operations for manipulating numerical tables.
+- `Numpy`: an essential library for scientific computing in python
+- `Matplotlib`: a plotting library useful for making the graphs and visualizations we need.
+- `Seaborn`: a data visualization library based on matplotlib to make graphs more visually appealing.
+- `BeautifulSoup`: a library that is useful for pulling data out of `HTML` and `XML` files allowing us to navigate, search, and modify the parse tree of the web file.
+- `Glob`: a module for generating lists of files, and will prove useful when reading in our dataframes.
+- `OS`: a module which will enable us to use operating system dependent functionality.
+- `Warnings` : a filter used to suppress certain warning messages created from the output of 'iffy' commands.
+
+
+## Gather data & Read in dataframes
+
+In order to help Microsoft better understand the film industry I needed data. After imports I read in a collection of dataframes that describe the current state of the film industry to glean actionable insights. I was initially provided with a zipped folder of several dataframes collected from the internet. Using pandas, I can accessed the files using the `.read_csv()` method.
+
+Film data used to answer these questions have been scraped from various websites including:
+
 * Box Office Mojo
 * IMDB
 * Rotten Tomatoes
 * TheMovieDB.org
+* Wikipedia
+* The-numbers
+* Statista
 
-# The Deliverables
 
-For online students, there will be five deliverables for this project (Note: On-campus students may have different requirements, please speak with your instructor):
+## Clean Data
 
-1. A well documented **Jupyter Notebook** containing any code you've written for this project and comments explaining it. This work will need to be pushed to your GitHub repository in order to submit your project.  
-2. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
-3. A short **Keynote/PowerPoint/Google Slides presentation** (delivered as a PDF export) giving a high-level overview of your methodology and recommendations for non-technical stakeholders. Make sure to also add and commit this pdf of your non-technical presentation to your repository with a file name of presentation.pdf.
-4. **[A Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1)**
-5. A **Video Walkthrough** of your non-technical presentation. Some common video recording tools used are Zoom, Quicktime, and Nimbus. After you record your presentation, publish it on a service like YouTube or Google Drive, you will need a link to the video to submit your project.
+We have used several methods to clean multiple dataframes. We have used the `.info()` method and `.head()` method to view the structural shape of the dataframes including their structure and datatypes, as well as look into the dataframes themselves.
 
-Note: On-campus students may have different requirements, please speak with your instructor.
+Furthermore we have used this information to make informed decisions about how to manage missing and duplicated data. We have taken advantage of `.value.sum()` chains to know if a dataframe had any missing or duplicated values. We then used `.dropna()` and `.drop_duplicates()` to delete missing and duplicated values from the dataframes.
 
-### Jupyter Notebook Must-Haves
+We used `.fillna()` in conjunction with the `.median()` method to fill the missing values with the median value of a particular column of a dataframe.
 
+We used the `.merge()` method to join dataframes with useful data on identical columns and used the `.replace()` methods to alter the values within columns. This enabled us to change datatypes of columns that were ill assigned.
+
+
+# Q.1: What trends exist among the 100 highest grossing films?
+
+For Q1 I searched for patterns that might exist among the top grossing films. I explore features through visualizations with matplotlib and seaborn to gain insights and recommendations.
+
+
+## EDA for Q1
+
+### Genre VIsualization
+
+![title](img/eda1.png)
+
+
+### Production Value Visualization
+
+#### Code used to create production value range bins
+
+    # Create a list of integers, including infinity defined by numpy.
+    bins = [170000000, 221000000, 272000000, 323000000, 374000000, np.inf]
+    # Create a name for the bins expressing the range for each bin.
+    names = ['$170-$221 million', '$221-$272 million',
+         '$272-$323 million', '$323-$374 million', '$374-$425 million']
+    # Make a new categorical column names budget range, which is made of the 
+    # segments from the production budget column, 
+    df_prod_100['budget_range'] = pd.cut(
+    #cut at the bin values and label with the names list.
+    df_prod_100['production_budget'], bins=bins, labels=names)
+
+
+![title](img/eda1_3.png)
+
+
+### Runtime Visualization
+
+![title](img/eda1_4.png)
+
+
+## Q1 Insights, Recommendations, & Future Work
+
+##### Insights
+
+Upon inspection, and exploratory data analysis there would appear to be trends among the top 100 worldwide grossing films. The data shows that:
+
+  - **Action** and **Adventure** films are among the most popular genre of films among the top grossing around the world.
+  - A reasonable budget for production for a film expected to be in the top 100 grossing is between **170-221 million dollars**, with Action films costing **50 million dollars** more to make on average. The average worlwide gross of the top 100 films was roughly **750 million** dollars. 
+  - A favorable runtime for a film belonging to the top 100 grossing worldwide is around **120 minutes**, with Action movies having an average **30 minute** longer length. There does **not appear to be a correlation between a film's gross and runtime**.
+
+##### Recommendaion
+
+* **Make an Action/Adventure film**
+Create an Adventure or Action film with a **production budget between 171 and 221 million dollars**, if making specifically an **Action film increase budget by around 30 million dollars**. The film should have a **runtime of around 127 minutes**, in other words 2 hours. The **average worldwide gross of Action films is around 750 million dollars**.
+
+##### Future Work
+
+* Explore demographics on movie goers
+* Utilize ratings data to find correlations among perceived quality of films
+
+
+# Q.2 Is there a correlation between Franchise Films and 100 highest grossing films?
+
+When taking a look at the list of top 100 grossing films, there seems to be a pattern not just among the genre, or budget, but also within the content. Many of these films are a part of a series, or have origins that are within the same fictional source. Here I explored the relationship between those films that are part of a franchise and the highest grossing films.
+
+## EDA for Q2
+
+### Top Franchise Visualization
+
+![title](img/eda2_1.png)
+
+
+### Franchise Age Visualization
+
+![title](img/eda2_2.png)
+
+
+### Franchise Movie Count Visualization
+
+![title](img/eda2_3.png)
+
+
+## Q2 Insights, Recommendations, & Future Work
+
+##### Insights
+
+Upon exploring the relationship between Franchise films and the top 100 grossing films, it is clear that there is a strong correlation. The **average gross of a franchise film was found to be around 200 million dollars**, while the **average gross of a franchise's best performing film was around 450 million dollars**. The **average gross of an entire franchise was 1.08 billion dollars**. 
+
+Creating a franchise would allow Microsoft studios to create a collection of films, **releasing a film on average every 2-3 years**. Data has also shown that the Action and Adventure genre is popular among the most common franchise films.
+
+
+##### Recommendation
+
+* **Make a Film Franchise**
+Use this Action/Adventure film to begin a franchise. This would enable to studio to make on average **one film every 2-3 years for 10 years**. An average franchise film **grosses 200 million dollars domestically**, while the gross of a franchise's **number one film is around 450 million dollars**. A franchise would on **average earn 1.08 billion dollars** for the company. 
+
+Suggested franchises to make are based on **franchises Microsoft already owns** which can **easily fit the Action/Adventure film** genre such as the **Minecraft, Halo, and Forza franchises**. If Microsoft were successful in transferring the fanbases of these gaming franchises into the movie industry, the three franchises combined could add around **3.3 billion dollars worth of revenue into the company**.
 For this project, your Jupyter Notebook should meet the following specifications:
 
-#### Organization/Code Cleanliness
+##### Future Work
 
-* The notebook should be well organized, easy to follow,  and code should be commented where appropriate.  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code.  All functions have docstrings that act as professional-quality documentation
-* The notebook is written for technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.
-
-#### Visualizations & EDA
-
-* Your project contains at least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)  
-* You pose at least 3 meaningful questions and answer them through EDA.  These questions should be well labeled and easy to identify inside the notebook.
-    * **Level Up**: Each question is clearly answered with a visualization that makes the answer easy to understand.   
-* Your notebook should contain 1 - 2 paragraphs briefly explaining your approach to this project.
+* Gather and analyze data on films that are analagous with Microsoft game franchises
+* Use machine learning models such as sentiment analysis to find valuable insights from these films' scripts.
 
 
-### Non-Technical Presentation Must-Haves
+# Q.3 What is a key correlation among Franchise Plots?
 
-Another deliverable should be a Keynote, PowerPoint or Google Slides presentation delivered as a pdf file in your fork of this repository with the file name of `presentation.pdf` detailing the results of your project.  Your target audience is non-technical people interested in using your findings to make decisions for creating movies.
+With franchise films appearing to be among the most successful in the box office, it would prove valuable to **explore some common traits of franchise films** beyond the genre and budget. Here we can investigate some **commonalities between the storylines** of these blockbusters, and share these insights with the team at Microsoft to enable them to make one of the most successful franchises of all time.
 
-Your presentation should:
+When analyzing a franchise, the most important aspect is the fact that the storyline must be one of **depth**, an **epic** that allows for several installments to tell the story, and in many cases a space for continuation that allows the story to grow over the years. Using domain knowledge brings us to **The Hero's Journey**. In Joseph Campbell's most notable work, *The Hero With a Thousand Faces*, a theory is introduced of the hero archetype that has been told countless times across history, referred to as the monomyth, or One Myth. The Hero's journey is characterized by 10-12 steps:
 
-* Contain between 5 - 10 professional-quality slides.  
-    * **Level Up**: The slides should use visualizations whenever possible, and avoid walls of text.
-* Take no more than 5 minutes to present.   
-* Avoid technical jargon and explain the results in a clear, actionable way for non-technical audiences.   
+![title](img/HerosJourneybig.png)
 
-### Blog Post Must-Haves
+## EDA for Q3
 
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1) for the technical requirements and blog ideas.
+### Hero's Journey Gross Visualization
 
+#### Code used to scrape Hero's Journey Data
 
+    # Define the URL we ant to make a request to
+    URL = 'https://www.imdb.com/list/ls055945505/'
+    # Define the request
+    response = requests.get(URL)
+    # Convert response to a BeautifulSoup object
+    soup = BeautifulSoup(response.text, 'html.parser')
+    # View our soup object
+    print(soup)
 
-## The Process
-(Note: On-campus students may have different processes, please speak with your instructor)
-
-### 1. Getting Started
-
-Please start by reviewing this document. If you have any questions, please ask them in Slack ASAP so (a) we can answer the questions and (b) so we can update this repository to make it clearer.
-
-Be sure to let the instructor team know when you’ve started working on a project, either by reaching out over Slack or, if you are in a full-time or part-time cohort, by connecting with your Cohort Lead in your weekly 1:1. If you’re not sure who to reach out to, post in the #online-ds-sp-000 channel in Slack.
-
-Once you're done with the 10 sections in module 1, please start on the project. Do that by forking this repository, cloning it locally, and working in the `student.ipynb` file. Make sure to also add and commit a pdf of your presentation to the repository with a file name of `presentation.pdf`.
-
-### 2. The Project Review
-
-_Note: On-campus students may have different review processes, please speak with your instructor._
-
-> **When you start on the project, please also reach out to an instructor immediately to schedule your project review** (if you're not sure who to schedule with, please ask in Slack!)
-
-#### What to expect from the Project Review
-
-Project reviews are focused on preparing you for technical interviews. Treat project reviews as if they were technical interviews, in both attitude and technical presentation *(sometimes technical interviews will feel arbitrary or unfair - if you want to get the job, commenting on that is seldom a good choice)*.
-
-The project review is comprised of a 45 minute 1:1 session with one of the instructors. During your project review, be prepared to:
-
-#### 1. Deliver your PDF presentation to a non-technical stakeholder.
-In this phase of the review (~10 mins) your instructor will play the part of a non-technical stakeholder that you are presenting your findings to. The presentation  should not exceed 5 minutes, giving the "stakeholder" 5 minutes to ask questions.
-
-In the first half of the presentation (2-3 mins), you should summarize your methodology in a way that will be comprehensible to someone with no background in data science and that will increase their confidence in you and your findings. In the second half (the remaining 2-3 mins) you should summarize your findings and be ready to answer a couple of non-technical questions from the audience. The questions might relate to technical topics (sampling bias, confidence, etc) but will be asked in a non-technical way and need to be answered in a way that does not assume a background in statistics or machine learning. You can assume a smart, business stakeholder, with a non-quantitative college degree.
-
-#### 2. Go through the Jupyter Notebook, answering questions about how you made certain decisions. Be ready to explain things like:
-    * "How did you pick the question(s) that you did?"
-    * "Why are these questions important from a business perspective?"
-    * "How did you decide on the data cleaning options you performed?"
-    * "Why did you choose a given method or library?"
-    * "Why did you select those visualizations and what did you learn from each of them?"
-    * "Why did you pick those features as predictors?"
-    * "How would you interpret the results?"
-    * "How confident are you in the predictive quality of the results?"
-    * "What are some of the things that could cause the results to be wrong?"
-
-Think of the first phase of the review (~30 mins) as a technical boss reviewing your work and asking questions about it before green-lighting you to present to the business team. You should practice using the appropriate technical vocabulary to explain yourself. Don't be surprised if the instructor jumps around or sometimes cuts you off - there is a lot of ground to cover, so that may happen.
-
-If any requirements are missing or if significant gaps in understanding are uncovered, be prepared to do one or all of the following:
-* Perform additional data cleanup, visualization, feature selection, modeling and/or model validation
-* Submit an improved version
-* Meet again for another Project Review
-
-What won't happen:
-* You won't be yelled at, belittled, or scolded
-* You won't be put on the spot without support
-* There's nothing you can do to instantly fail or blow it
-
-**Please note: We need to receive the URL of your repository at least 24 hours before and please have the project finished at least 3 hours before your review so we can look at your materials in advance.**
+![title](img/eda3_1.png)
 
 
-## Submitting your Project
+### Hero's Journey Runtime Visualization
 
- You’re almost done! In order to submit your project for review, include the following links to your work in the corresponding fields on the right-hand side of Learn.
-
- 1. **GitHub Repo:** Now that you’ve completed your project in Jupyter Notebooks, push your work to GitHub and paste that link to the right. (If you need help doing so, review the resources [here](https://docs.google.com/spreadsheets/d/1CNGDhjcQZDRx2sWByd2v-mgUOjy13Cd_hQYVXPuzEDE/edit#gid=0).)
-_Reminder: Make sure to also add and commit a pdf of your non-technical presentation to the repository with a file name of presentation.pdf._
-2. **Blog Post:** Include a link to your blog post.
-3. **Record Walkthrough:** Include a link to your video walkthrough.
-
- Hit "I'm done" to wrap it up. You will receive an email in order to schedule your review with your instructor.
-
-## Grading Rubric
-
-Online students can find a PDF of the grading rubric for the project [here](https://github.com/learn-co-curriculum/dsc-mod-1-project-v2-1/blob/master/module1_project_rubric.pdf). On-campus students may have different review processes, please speak with your instructor.
+![title](img/eda3_2.png)
 
 
-## Summary
+### Hero's Journey Production Budget Visualization
 
-The end of module projects and project reviews are a critical part of the program. They give you a chance to both bring together all the skills you've learned into realistic projects and to practice key "business judgement" and communication skills that you otherwise might not get as much practice with.
+![title](img/eda3_3.png)
 
-The projects are serious and important. They are not graded, but they can be passed and they can be failed. Take the project seriously, put the time in, ask for help from your peers or instructors early and often if you need it, and treat the review as a job interview and you'll do great. We're rooting for you to succeed and we're only going to ask you to take a review again if we believe that you need to. We'll also provide open and honest feedback so you can improve as quickly and efficiently as possible.
 
-Finally, this is your first project. We don't expect you to remember all of the terms or to get all of the answers right. If in doubt, be honest. If you don't know something, say so. If you can't remember it, just say so. It's very unusual for someone to complete a project review without being asked a question they're unsure of, we know you might be nervous which may affect your performance. Just be as honest, precise and focused as you can be, and you'll do great!
+## Q3 Insights, Recommendations, & Future Work
+
+##### Insights
+
+The data showed that there is a **strong correlation between franchise film storylines and the Hero's Journey** as it has been defined. I can see that a high percentage of franchise films utilize the Monomyth in order to create a plot with depth and epic that allows for several installments to tell the story, and in many cases a space for continuation that allows the story to grow over the years. 
+
+I can see that the worldwide gross of this group is quite high, being about **845 million dollars**. The **average runtime of a Hero's Journey film is 104 minutes**, and the average production budget is **197 million dollars**. This may be one of the most profitable categories of film that we have explored. The monomyth also aligns with the most popular top grossing film genres Adventure and Action.
+
+##### Recommendations 
+
+* **Use The Hero's Journey Format**
+The film franchise should follow the Hero's Journey format. This is a proven format among franchise films that allow the space and growth necessary to sustain a large collection of films. These films on **average gross 845 million dollars worldwide**, with an average production budget of **197 million dollars**. This format also lends itself to the Action and Adventure genre very well.
+
+##### Future Works
+
+* Gather more data on Monomyth films
+* Reseach other trends found within the storylines of successful franchise films
