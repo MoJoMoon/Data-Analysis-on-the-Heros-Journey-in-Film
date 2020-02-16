@@ -135,7 +135,7 @@ For Q1 I searched for patterns that might exist among the top grossing films. I 
 
 ### Runtime Visualization
 
-![title](img/eda1_4.png)
+![title](img/eda1_5.png)
 
 
 ## Q1 Insights, Recommendations, & Future Work
@@ -151,7 +151,7 @@ Upon inspection, and exploratory data analysis there would appear to be trends a
 ### Recommendaion
 
 * **Make an Action/Adventure film**
-Create an Adventure or Action film with a **production budget between 171 and 221 million dollars**, if making specifically an **Action film increase budget by around 30 million dollars**. The film should have a **runtime of around 127 minutes**, in other words 2 hours. The **average worldwide gross of Action films is around 750 million dollars**.
+Create an Adventure or Action film with a **production budget between 171 and 221 million dollars**, if making specifically an **Action film increase budget by around 30 million dollars**. Spending more on a film does not have a large impact on the worldwide gross until the budget is **above 374 million dollars**. The film should have a **runtime of around 127 minutes**, in other words 2 hours. The **average worldwide gross of Action films is around 750 million dollars**.
 
 ### Future Work
 
@@ -172,7 +172,7 @@ When taking a look at the list of top 100 grossing films, there seems to be a pa
 
 ### Franchise Age Visualization
 
-![title](img/eda_2_2.png)
+![title](img/eda2_22.png)
 
 
 ### Franchise Movie Count Visualization
@@ -226,7 +226,7 @@ When analyzing a franchise, the most important aspect is the fact that the story
     # View our soup object
     print(soup)
 
-![title](img/eda3_1.png)
+![title](img/eda3_11.png)
 
 
 ### Hero's Journey Runtime Visualization
@@ -255,4 +255,4 @@ The film franchise should follow the Hero's Journey format. This is a proven for
 ### Future Works
 
 * Gather more data on Monomyth films
-* Reseach other trends found within the storylines of successful franchise films
+* Research other trends found within the storylines of successful franchise films
